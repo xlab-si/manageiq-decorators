@@ -1,5 +1,19 @@
 describe MiqDecorator do
-  context ".for" do
+  described_class.descendants.each do |klass|
+    next if klass == described_class # Skipping MiqDecorator
+
+    # This spec is intended to test the decorators defined in the ui-classic repo
+    # Any other decorator coming from e.g. the providers is allowed to inherit indirectly
+    next unless File.exist?(ManageIQ::Decorators.root.join('app', 'decorators', "#{klass.to_s.underscore}.rb"))
+
+    context "subclass #{klass}" do
+      it "is directly inherited from #{described_class}" do
+        expect(klass.superclass).to be(described_class)
+      end
+    end
+  end
+
+  describe ".for" do
     it "returns nil when a class doesn't have a decorator" do
       class TestClassWithout1
       end
