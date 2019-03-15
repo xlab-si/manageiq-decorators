@@ -9,6 +9,10 @@ class MiqAeMethodDecorator < MiqDecorator
       'fa-ruby'
     when 'expression'
       'fa fa-search'
+    when 'ansible_workflow_template'
+      'ff ff-load-balancer'
+    when 'ansible_job_template'
+      'fa pficon-template'
     when 'playbook'
       nil
     else
