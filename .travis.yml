@@ -5,5 +5,5 @@ rvm:
 sudo: false
 cache: bundler
 addons:
-  postgresql: '9.4'
+  postgresql: '10'
 install: bin/setup
