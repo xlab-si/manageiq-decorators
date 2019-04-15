@@ -1,4 +1,4 @@
-class AuthPrivateKeyDecorator < MiqDecorator
+class AuthenticationDecorator < MiqDecorator
   def self.fonticon
     'ff ff-cloud-keys'
   end
