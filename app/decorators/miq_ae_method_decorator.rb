@@ -1,15 +1,19 @@
 class MiqAeMethodDecorator < MiqDecorator
   def fileicon
-    "svg/vendor-ansible.svg" if location == 'playbook'
+    'svg/vendor-ansible.svg' if location == 'playbook'
   end
 
   def fonticon
     case location
-    when "inline"
+    when 'inline'
       'fa-ruby'
-    when "expression"
+    when 'expression'
       'fa fa-search'
-    when "playbook"
+    when 'ansible_workflow_template'
+      'ff ff-load-balancer'
+    when 'ansible_job_template'
+      'fa pficon-template'
+    when 'playbook'
       nil
     else
       'ff ff-method'
